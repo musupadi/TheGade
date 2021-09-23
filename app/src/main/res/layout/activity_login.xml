@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="286dp"
+                    android:src="@drawable/background"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/logo_black" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="210dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="4dp"
+                            card_view:cardCornerRadius="4dp">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:background="@drawable/button_white_rounded">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:id="@+id/linearLoginNew">
+
+                                        <TextView
+                                            android:fontFamily="@font/gotham"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="20dp"
+                                            android:gravity="center"
+                                            android:text="Login"
+                                            android:textColor="@color/colorBlack"
+                                            android:textSize="30sp"
+                                            android:textStyle="bold" />
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:background="@drawable/button_primary_rounded">
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_margin="3dp"
+                                                android:background="@drawable/button_white_rounded">
+                                                <EditText
+                                                    android:id="@+id/etUsername"
+                                                    android:fontFamily="@font/gotham"
+                                                    android:textSize="20sp"
+                                                    android:background="@color/colorWhite"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_margin="10dp"
+                                                    android:hint="Username"/>
+                                            </LinearLayout>
+                                        </LinearLayout>
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:background="@drawable/button_primary_rounded">
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_margin="3dp"
+                                                android:background="@drawable/button_white_rounded">
+                                                <LinearLayout
+                                                    android:layout_margin="10dp"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+                                                    <EditText
+                                                        android:fontFamily="@font/gotham"
+                                                        android:textSize="20sp"
+                                                        android:background="@color/colorWhite"
+                                                        android:inputType="textPassword"
+                                                        android:id="@+id/etPassword"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:hint="Password"
+                                                        android:layout_weight="1"/>
+                                                    <ImageView
+                                                        android:id="@+id/ivEye"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:src="@drawable/eye"
+                                                        android:layout_weight="6"/>
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+                                        </LinearLayout>
+                                        <TextView
+                                            android:fontFamily="@font/gotham"
+                                            android:layout_marginTop="15dp"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Forgot Password ? "
+                                            android:layout_gravity="center"
+                                            android:textColor="@color/colorRed"
+                                            android:id="@+id/tvForgotPassword"/>
+                                        <Button
+                                            android:fontFamily="@font/gotham"
+                                            android:id="@+id/btnLogin"
+                                            android:layout_marginTop="20dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Login"
+                                            android:gravity="center"
+                                            android:textColor="@color/colorWhite"
+                                            android:layout_gravity="center"
+                                            android:background="@drawable/btn_rounded_primary"
+                                            android:layout_marginRight="50dp"
+                                            android:layout_marginLeft="50dp"/>
+                                        <LinearLayout
+                                            android:layout_marginTop="20dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
