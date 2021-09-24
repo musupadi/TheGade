@@ -1,15 +1,15 @@
-package com.ascendant.thegade.Model;
+package com.ascendant.thegade.Model.Response;
 
 import androidx.annotation.Nullable;
 
+import com.ascendant.thegade.Model.DataModel;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ResponseModel {
+public class ResponseArrayObject {
     @SerializedName("status")
-    @Expose
     @Nullable
     public String status;
 

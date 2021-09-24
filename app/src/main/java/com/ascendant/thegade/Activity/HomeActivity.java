@@ -42,20 +42,11 @@ public class HomeActivity extends AppCompatActivity {
     Button No,Yes;
     boolean doubleBackToExitPressedOnce = false;
 
-    private String[] galleryPermissions =
-            {Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.CAMERA};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        if(EasyPermissions.hasPermissions(HomeActivity.this, galleryPermissions)) {
-
-        }else{
-            EasyPermissions.requestPermissions(HomeActivity.this, "Access for storage",
-                    101, galleryPermissions);
-        }
         Declaration();
         Home();
         OnClick();
@@ -110,7 +101,8 @@ public class HomeActivity extends AppCompatActivity {
         dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_exit);
         No = dialog.findViewById(R.id.btnTidak);
-        Yes = dialog.findViewById(R.id.btnYa);
+        Yes = dialog.findViewById(R.id.
+                btnYa);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawableResource(R.drawable.rounded_corner);
     }
@@ -168,11 +160,6 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         this.doubleBackToExitPressedOnce = true;
-        if (Lang.equals("English")){
-            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(this, "Tekan Tombol Kembali lagi untuk keluar", Toast.LENGTH_SHORT).show();
-        }
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {

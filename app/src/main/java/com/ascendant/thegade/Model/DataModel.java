@@ -4,76 +4,100 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class DataModel {
-    @SerializedName("id")
+    @SerializedName("id_karyawan")
     @Expose
-    public String id;
+    public String id_karyawan;
 
-    @SerializedName("email")
+    @SerializedName("email_karyawan")
     @Expose
-    public String email;
+    public String email_karyawan;
 
-    @SerializedName("username")
+    @SerializedName("nama_karyawan")
     @Expose
-    public String username;
+    public String nama_karyawan;
 
-    @SerializedName("nama")
+    @SerializedName("nik_karyawan")
     @Expose
-    public String nama;
+    public String nik_karyawan;
 
-    @SerializedName("status")
+    @SerializedName("status_karyawan")
     @Expose
-    public String status;
+    public String status_karyawan;
 
-    @SerializedName("nik")
+    @SerializedName("alamat")
     @Expose
-    public String nik;
+    public String alamat;
+
+    @SerializedName("latitude")
+    @Expose
+    public String latitude;
+
+    @SerializedName("longitude")
+    @Expose
+    public String longitude;
 
 
-    public String getId() {
-        return id;
+    public String getId_karyawan() {
+        return id_karyawan;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId_karyawan(String id_karyawan) {
+        this.id_karyawan = id_karyawan;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmail_karyawan() {
+        return email_karyawan;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail_karyawan(String email_karyawan) {
+        this.email_karyawan = email_karyawan;
     }
 
-    public String getUsername() {
-        return username;
+    public String getNama_karyawan() {
+        return nama_karyawan;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNama_karyawan(String nama_karyawan) {
+        this.nama_karyawan = nama_karyawan;
     }
 
-    public String getNama() {
-        return nama;
+    public String getNik_karyawan() {
+        return nik_karyawan;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setNik_karyawan(String nik_karyawan) {
+        this.nik_karyawan = nik_karyawan;
     }
 
-    public String getStatus() {
-        return status;
+    public String getStatus_karyawan() {
+        return status_karyawan;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatus_karyawan(String status_karyawan) {
+        this.status_karyawan = status_karyawan;
     }
 
-    public String getNik() {
-        return nik;
+    public String getAlamat() {
+        return alamat;
     }
 
-    public void setNik(String nik) {
-        this.nik = nik;
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 }
