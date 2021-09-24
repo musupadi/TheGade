@@ -24,7 +24,7 @@ import com.ascendant.thegade.SharedPreferance.DB_Helper;
 public class HomeFragment extends Fragment {
 
     DB_Helper dbHelper;
-    String Username,Nama,Status,Nik;
+    String Id,Username,Nama,Status,Nik;
     TextView nama,nik;
     CardView CheckIn,CheckOut;
 
@@ -57,10 +57,11 @@ public class HomeFragment extends Fragment {
         Cursor cursor = dbHelper.checkUser();
         if (cursor.getCount()>0){
             while (cursor.moveToNext()){
-                Username = cursor.getString(0);
-                Nama = cursor.getString(1);
-                Status = cursor.getString(2);
-                Nik = cursor.getString(3);
+                Id = cursor.getString(0);
+                Username = cursor.getString(1);
+                Nama = cursor.getString(2);
+                Status = cursor.getString(3);
+                Nik = cursor.getString(4);
             }
         }
         nama.setText(Nama);

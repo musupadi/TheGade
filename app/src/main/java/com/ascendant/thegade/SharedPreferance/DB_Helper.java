@@ -11,6 +11,7 @@ public class DB_Helper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     //Account
     public static final String TABLE_NAME_ACCOUNT = "account";
+    public static final String COLUMN_ID = "id";
     public static final String COLUMN_USERNAME = "username";
     public static final String COLUMN_NAMA = "nama";
     public static final String COLUMN_STATUS = "status";
@@ -23,6 +24,7 @@ public class DB_Helper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE "+TABLE_NAME_ACCOUNT+" (" +
+                COLUMN_ID+" TEXT NOT NULL, "+
                 COLUMN_USERNAME+" TEXT NOT NULL, "+
                 COLUMN_NAMA+" TEXT NOT NULL, "+
                 COLUMN_STATUS+" TEXT NOT NULL, "+
@@ -37,9 +39,10 @@ public class DB_Helper extends SQLiteOpenHelper {
     }
 
     //Save
-    public void SaveUser(String username,String nama,String status,String nik){
+    public void SaveUser(String ID,String username,String nama,String status,String nik){
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put(COLUMN_ID, ID);
         values.put(COLUMN_USERNAME, username);
         values.put(COLUMN_NAMA, nama);
         values.put(COLUMN_STATUS, status);

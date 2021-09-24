@@ -1,15 +1,36 @@
 package com.ascendant.thegade.API;
 
-import com.ascendant.thegade.Model.ResponseModel;
+import com.ascendant.thegade.Model.Response.ResponseObject;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface ApiRequest {
     @FormUrlEncoded
-    @POST("user/Login")
-    Call<ResponseModel> login(@Field("username") String username,
-                              @Field("password") String password);
+    @POST("login")
+    Call<ResponseObject> login(@Header("Authorization") String authHeader,
+                               @Field("email") String email,
+                               @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("absen/masuk")
+    Call<ResponseObject> CheckIn(@Header("Authorization") String authHeader,
+                                 @Field("id_karyawan") String id_karyawan,
+                                 @Field("waktu_absen") String waktu_absen,
+                                 @Field("latitude") String latitude,
+                                 @Field("longitude") String longitude);
+
+    @FormUrlEncoded
+    @POST("absen/keluar")
+    Call<ResponseObject> CheckOut(@Header("Authorization") String authHeader,
+                                 @Field("id_karyawan") String id_karyawan,
+                                 @Field("waktu_absen") String waktu_absen,
+                                 @Field("latitude") String latitude,
+                                 @Field("longitude") String longitude);
+
+    @POST("location")
+    Call<ResponseObject> location(@Header("Authorization") String authHeader);
 }
