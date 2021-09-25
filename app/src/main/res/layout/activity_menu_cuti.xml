@@ -1,9 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.ui.Karyawan.MenuCutiActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/tvNama"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gotham"
+                            android:text="-"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/text_extra_large"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvNik"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gotham"
+                            android:text="-"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/text_extra_large"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4">
+
+                        <LinearLayout
+                            android:layout_width="57dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/btn_rounded_accent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/gotham"
+                                android:gravity="center"
+                                android:text="Aktif"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/text_medium"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp">
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Mulai"
+                    android:textSize="@dimen/header_text_small"
+                    android:fontFamily="@font/gotham"
+                    android:textColor="@color/colorBlack"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_primary_rounded">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/button_white_rounded">
+                        <LinearLayout
+                            android:id="@+id/linearTanggalMulai"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:textSize="20sp"
+                                android:id="@+id/tvTanggalMulai"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gotham"
+                                android:padding="5dp"
+                                android:text="21 April 2020"
+                                android:textColor="@color/colorBlack" />
+
+                            <ImageView
+                                android:id="@+id/ivTanggalMulai"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_gravity="right"
+                                android:layout_weight="5"
+                                android:foregroundGravity="right"
+                                android:src="@drawable/calendar"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Selesai"
+                    android:textSize="@dimen/header_text_small"
+                    android:fontFamily="@font/gotham"
+                    android:textColor="@color/colorBlack"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_primary_rounded">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/button_white_rounded">
+                        <LinearLayout
+                            android:id="@+id/linearTanggalSelesai"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:textSize="20sp"
+                                android:id="@+id/tvTanggalSelesai"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gotham"
+                                android:padding="5dp"
+                                android:text="21 April 2020"
+                                android:textColor="@color/colorBlack" />
+
+                            <ImageView
+                                android:id="@+id/ivTanggalSelesai"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_gravity="right"
+                                android:layout_weight="5"
+                                android:foregroundGravity="right"
+                                android:src="@drawable/calendar"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Alasan Cuti"
+                    android:textSize="@dimen/header_text_small"
+                    android:fontFamily="@font/gotham"
+                    android:textColor="@color/colorBlack"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_primary_rounded">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/button_white_rounded">
+                        <EditText
+                            android:id="@+id/etUsername"
+                            android:fontFamily="@font/gotham"
+                            android:textSize="20sp"
+                            android:background="@color/colorWhite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:hint="Username"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/gotham"
+                    android:text="Kirim"
+                    android:background="@drawable/button_primary_rounded"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</FrameLayout>
