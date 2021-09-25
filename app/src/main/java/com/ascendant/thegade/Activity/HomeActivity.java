@@ -41,12 +41,20 @@ public class HomeActivity extends AppCompatActivity {
     Dialog dialog;
     Button No,Yes;
     boolean doubleBackToExitPressedOnce = false;
-
-//    supri kontol
+    private String[] galleryPermissions =
+            {Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.CAMERA};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        if(EasyPermissions.hasPermissions(HomeActivity.this, galleryPermissions)) {
+
+        }else{
+            EasyPermissions.requestPermissions(HomeActivity.this, "Access for storage",
+                    101, galleryPermissions);
+        }
         Declaration();
         Home();
         OnClick();
