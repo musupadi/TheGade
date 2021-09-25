@@ -24,6 +24,14 @@ public interface ApiRequest {
                                  @Field("longitude") String longitude);
 
     @FormUrlEncoded
+    @POST("cuti")
+    Call<ResponseObject> Cuti(@Header("Authorization") String authHeader,
+                              @Field("id_karyawan") String id_karyawan,
+                              @Field("tgl_cuti_mulai") String tgl_cuti_mulai,
+                              @Field("tgl_cuti_selesai") String tgl_cuti_selesai,
+                              @Field("alasan_cuti") String alasan_cuti);
+
+    @FormUrlEncoded
     @POST("absen/keluar")
     Call<ResponseObject> CheckOut(@Header("Authorization") String authHeader,
                                  @Field("id_karyawan") String id_karyawan,

@@ -116,11 +116,12 @@
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1" />
+
                     <ImageView
-                        android:layout_centerInParent="true"
                         android:id="@+id/ivAbout"
                         android:layout_width="60dp"
                         android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
                         android:layout_weight="1"
                         android:src="@drawable/home" />
                 </RelativeLayout>
@@ -131,7 +132,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:text="About Us"
+                    android:text="Pengaturan"
                     android:textSize="@dimen/text_smoll"
                     android:textColor="@color/colorBlack"
                     android:gravity="center"/>
