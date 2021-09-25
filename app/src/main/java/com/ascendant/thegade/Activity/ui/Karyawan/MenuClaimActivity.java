@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,31 +18,57 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.ascendant.thegade.API.ApiRequest;
+import com.ascendant.thegade.API.RetroServer;
+import com.ascendant.thegade.Activity.HomeActivity;
 import com.ascendant.thegade.BuildConfig;
+import com.ascendant.thegade.Method.Ascendant;
+import com.ascendant.thegade.Method.NumberTextWatcher;
+import com.ascendant.thegade.Model.Response.ResponseObject;
 import com.ascendant.thegade.R;
+import com.ascendant.thegade.SharedPreferance.DB_Helper;
 import com.bumptech.glide.Glide;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.logging.Logger;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import pub.devrel.easypermissions.EasyPermissions;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-public class MenuClaimActivity extends AppCompatActivity {
+public class MenuClaimActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
     Button btnBerkas;
     LinearLayout linearBerkas;
     TextView tvBerkas;
     ImageView ivBerkas;
-
+    Ascendant AscNet;
+    DB_Helper dbHelper;
+    String Id,Username,Nama,Status,Nik;
+    TextView nama,nik;
+    Button Kirim;
+    EditText JenisKlaim,TotalKlaim;
+    LinearLayout LTanggalPengajuan, LTanggalBerkas;
+    TextView TanggalPengajuan, TanggalBerkas;
+    String Tanggals = "Anak";
+    String tanggalPengajuan = "1994-01-15";
+    String tanggalBerkas = "1994-01-15";
     //Dellaroy Logic
     private static final int REQUEST_TAKE_PHOTO = 0;
     private static final int REQUEST_PICK_PHOTO = 2;
@@ -74,6 +101,7 @@ public class MenuClaimActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_claim);
+        AscNet = new Ascendant();
         if(EasyPermissions.hasPermissions(MenuClaimActivity.this, galleryPermissions)) {
 
         }else{
@@ -89,8 +117,47 @@ public class MenuClaimActivity extends AppCompatActivity {
         linearBerkas = findViewById(R.id.linearBerkas);
         tvBerkas = findViewById(R.id.tvBerkas);
         ivBerkas = findViewById(R.id.ivBerkas);
+        Kirim = findViewById(R.id.btnKirim);
+        nama = findViewById(R.id.tvNama);
+        nik = findViewById(R.id.tvNik);
+        LTanggalPengajuan = findViewById(R.id.linearTanggalPengajuan);
+        LTanggalBerkas = findViewById(R.id.linearTanggalBerkas);
+        TanggalPengajuan = findViewById(R.id.tvTanggalPengajuan);
+        TanggalBerkas = findViewById(R.id.tvTanggalBerkas);
+        JenisKlaim = findViewById(R.id.etJenisKlaim);
+        TotalKlaim = findViewById(R.id.etTotalKlaim);
+        dbHelper = new DB_Helper(this);
+        Cursor cursor = dbHelper.checkUser();
+        if (cursor.getCount()>0){
+            while (cursor.moveToNext()){
+                Id = cursor.getString(0);
+                Username = cursor.getString(1);
+                Nama = cursor.getString(2);
+                Status = cursor.getString(3);
+                Nik = cursor.getString(4);
+            }
+        }
+        nama.setText(Nama);
+        nik.setText(Nik);
+        TanggalPengajuan.setText(AscNet.thisDay());
+        TanggalBerkas.setText(AscNet.thisDay());
+        tanggalPengajuan = AscNet.Today();
+        tanggalBerkas = AscNet.Today();
+        TotalKlaim.addTextChangedListener(new NumberTextWatcher(TotalKlaim));
     }
     private void OnClick(){
+        Kirim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Checker();
+            }
+        });
+        LTanggalBerkas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePicker();
+            }
+        });
         btnBerkas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,7 +188,83 @@ public class MenuClaimActivity extends AppCompatActivity {
             }
         });
     }
+    private void Checker(){
+        if (Gambar1=false){
+            Toast.makeText(MenuClaimActivity.this, "Harap Unggah Gambar", Toast.LENGTH_SHORT).show();
+        }else if (JenisKlaim.getText().toString().isEmpty()){
+            Toast.makeText(MenuClaimActivity.this, "Harap Jenis Klaim Diisi", Toast.LENGTH_SHORT).show();
+        }else if(TotalKlaim.getText().toString().isEmpty()){
+            Toast.makeText(MenuClaimActivity.this, "Harap Total Klaim Diisi", Toast.LENGTH_SHORT).show();
+        }else{
+            Logic();
+        }
+    }
+    private void Logic(){
+        final ProgressDialog pd = new ProgressDialog(MenuClaimActivity.this);
+        pd.setMessage("Sedang Mengajukan");
+        pd.show();
+        pd.setCancelable(false);
+        File file = new File(postFoto1);
+        RequestBody fileReqBody = RequestBody.create(MediaType.parse("image/*"), file);
+        MultipartBody.Part Foto = MultipartBody.Part.createFormData("file_reimburse", file.getName(), fileReqBody);
 
+        ApiRequest api = RetroServer.getClient().create(ApiRequest.class);
+        Call<ResponseObject> Claim =api.ReimbursePengajuan(
+                AscNet.AUTH(),
+                RequestBody.create(MediaType.parse("text/plain"),Id),
+                RequestBody.create(MediaType.parse("text/plain"),JenisKlaim.getText().toString()),
+                RequestBody.create(MediaType.parse("text/plain"),tanggalPengajuan),
+                RequestBody.create(MediaType.parse("text/plain"),tanggalBerkas),
+                RequestBody.create(MediaType.parse("text/plain"),AscNet.MagicChange(TotalKlaim.getText().toString())),
+                Foto
+        );
+        Claim.enqueue(new Callback<ResponseObject>() {
+            @Override
+            public void onResponse(Call<ResponseObject> call, Response<ResponseObject> response) {
+                pd.hide();
+                Toast.makeText(MenuClaimActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                if (response.body().getCode().equals(200)){
+                    Intent intent =new Intent(MenuClaimActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseObject> call, Throwable t) {
+                pd.hide();
+                Toast.makeText(MenuClaimActivity.this, "Koneksi Gagal", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void showDatePicker(){
+        DatePickerDialog dialog = new DatePickerDialog(this,
+                this,
+                Calendar.getInstance().get(Calendar.YEAR),
+                Calendar.getInstance().get(Calendar.MONTH),
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+        dialog.show();
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        String M = "01";
+        String D = "01";
+        int m = month+1;
+        if (m<10){
+            M="0"+String.valueOf(month+1);
+        }else{
+            M=String.valueOf(month+1);
+        }
+        if (dayOfMonth<10){
+            D="0"+String.valueOf(dayOfMonth);
+        }else{
+            D=String.valueOf(dayOfMonth);
+        }
+        String date = year+"-"+M+"-"+D;
+        TanggalBerkas.setText(AscNet.DateChanges(String.valueOf(year),M,D));
+        tanggalBerkas = date;
+
+    }
     //Dellaroy Logic
     private void captureImage() {
         if (Build.VERSION.SDK_INT > 21) { //use this if Lollipop_Mr1 (API 22) or above

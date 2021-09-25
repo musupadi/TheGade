@@ -23,6 +23,8 @@ public class ResponseObject {
     @Expose
     DataModel data;
 
+
+
     @Nullable
     public String getStatus() {
         return status;

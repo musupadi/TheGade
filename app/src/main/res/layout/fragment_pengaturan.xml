@@ -110,15 +110,15 @@
                         app:cardCornerRadius="10dp"
                         app:cardElevation="10dp">
                         <LinearLayout
+                            android:padding="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerInParent="true"
                             android:background="@color/colorPrimary">
                             <ImageView
-                                android:layout_marginLeft="10dp"
                                 android:layout_width="70dp"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/check_in"/>
+                                android:src="@drawable/profile_karyawan"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -146,15 +146,15 @@
                         app:cardCornerRadius="10dp"
                         app:cardElevation="10dp">
                         <LinearLayout
+                            android:padding="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerInParent="true"
                             android:background="@color/colorPrimary">
                             <ImageView
-                                android:layout_marginLeft="10dp"
                                 android:layout_width="70dp"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/check_in"/>
+                                android:src="@drawable/ganti_password"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -182,21 +182,21 @@
                         app:cardCornerRadius="10dp"
                         app:cardElevation="10dp">
                         <LinearLayout
+                            android:padding="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerInParent="true"
                             android:background="@color/colorPrimary">
                             <ImageView
-                                android:layout_marginLeft="10dp"
                                 android:layout_width="70dp"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/check_in"/>
+                                android:src="@drawable/faq"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:paddingLeft="10dp"
                                 android:layout_weight="1"
-                                android:text="Pengajuan Cuti"
+                                android:text="FAQ"
                                 android:gravity="center_vertical"
                                 android:textColor="@color/colorWhite"
                                 android:fontFamily="@font/gotham"
@@ -218,21 +218,21 @@
                         app:cardCornerRadius="10dp"
                         app:cardElevation="10dp">
                         <LinearLayout
+                            android:padding="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerInParent="true"
                             android:background="@color/colorPrimary">
                             <ImageView
-                                android:layout_marginLeft="10dp"
                                 android:layout_width="70dp"
                                 android:layout_height="match_parent"
-                                android:src="@drawable/check_in"/>
+                                android:src="@drawable/ic_baseline_exit_to_app_24"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:paddingLeft="10dp"
                                 android:layout_weight="1"
-                                android:text="Pengajuan Cuti"
+                                android:text="Logout"
                                 android:gravity="center_vertical"
                                 android:textColor="@color/colorWhite"
                                 android:fontFamily="@font/gotham"

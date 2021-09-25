@@ -2,11 +2,15 @@ package com.ascendant.thegade.API;
 
 import com.ascendant.thegade.Model.Response.ResponseObject;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Header;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 
 public interface ApiRequest {
     @FormUrlEncoded
@@ -38,6 +42,16 @@ public interface ApiRequest {
                                  @Field("waktu_absen") String waktu_absen,
                                  @Field("latitude") String latitude,
                                  @Field("longitude") String longitude);
+
+    @Multipart
+    @POST("reimburse/pengajuan")
+    Call<ResponseObject> ReimbursePengajuan(@Header("Authorization") String authHeader,
+                                            @Part("id_karyawan") RequestBody id_karyawan,
+                                            @Part("jenis_klaim") RequestBody jenis_klaim,
+                                            @Part("tgl_pengajuan") RequestBody tgl_pengajuan,
+                                            @Part("tgl_berkas") RequestBody tgl_berkas,
+                                            @Part("nominal_reimburse") RequestBody nominal_reimburse,
+                                            @Part MultipartBody.Part file_reimburse);
 
     @POST("location")
     Call<ResponseObject> location(@Header("Authorization") String authHeader);

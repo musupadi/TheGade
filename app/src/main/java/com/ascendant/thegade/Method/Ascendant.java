@@ -16,6 +16,11 @@ public class Ascendant {
         String authHeader = "Basic "+ Base64.encodeToString(base.getBytes(),Base64.NO_WRAP);
         return authHeader;
     }
+    public String MagicChange(String magic){
+        String MAGIC1 = magic.replace("Rp","");
+        String MAGIC2 = MAGIC1.replace(",","");
+        return MAGIC2.replace(".","");
+    }
     public String SmallDescription(String description){
         String Des = description;
         if (description.length() >= 100){

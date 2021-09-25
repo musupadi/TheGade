@@ -177,6 +177,7 @@
                     app:cardCornerRadius="10dp"
                     app:cardElevation="10dp">
                     <LinearLayout
+                        android:padding="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -185,11 +186,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:src="@drawable/karyawan_active"/>
+                            android:src="@drawable/daftar_pekerjaan"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:text="Daftar Pekerjaan"
                             android:gravity="center"
                             android:textColor="@color/colorWhite"
@@ -205,6 +206,7 @@
                     app:cardCornerRadius="10dp"
                     app:cardElevation="10dp">
                     <LinearLayout
+                        android:padding="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -213,11 +215,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:src="@drawable/karyawan_active"/>
+                            android:src="@drawable/slip_gaji"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:text="Slip Gaji"
                             android:gravity="center"
                             android:textColor="@color/colorWhite"
@@ -238,6 +240,7 @@
                     app:cardCornerRadius="10dp"
                     app:cardElevation="10dp">
                     <LinearLayout
+                        android:padding="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -246,11 +249,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:src="@drawable/karyawan_active"/>
+                            android:src="@drawable/daftar_kehadiran"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:text="Daftar Kehadiran"
                             android:gravity="center"
                             android:textColor="@color/colorWhite"
@@ -266,6 +269,7 @@
                     app:cardCornerRadius="10dp"
                     app:cardElevation="10dp">
                     <LinearLayout
+                        android:padding="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -274,11 +278,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:src="@drawable/karyawan_active"/>
+                            android:src="@drawable/daftar_karyawan"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:text="Data Karyawan"
                             android:gravity="center"
                             android:textColor="@color/colorWhite"
