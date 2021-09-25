@@ -1,236 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_centerInParent="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="5dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorConcrete"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="18dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/linearBack">
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/left_concerate"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Check In"
+                    android:gravity="center|left"
+                    android:fontFamily="@font/gotham"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/header_text_small"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_centerInParent="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorWhite"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="15dp">
-
-                        <TextView
-                            android:id="@+id/tvNama"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/gotham"
-                            android:text="-"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="@dimen/text_extra_large"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tvNik"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/gotham"
-                            android:text="-"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="@dimen/text_extra_large"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="4">
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal">
 
                         <LinearLayout
-                            android:layout_width="57dp"
-                            android:layout_height="30dp"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/btn_rounded_accent">
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="15dp">
 
                             <TextView
+                                android:id="@+id/tvNama"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:fontFamily="@font/gotham"
-                                android:gravity="center"
-                                android:text="Aktif"
+                                android:text="-"
                                 android:textColor="@color/colorWhite"
-                                android:textSize="@dimen/text_medium"
+                                android:textSize="@dimen/text_extra_large"
                                 android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvNik"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gotham"
+                                android:text="-"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/text_extra_large"
+                                android:textStyle="bold" />
+
                         </LinearLayout>
-                    </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="4">
+
+                            <LinearLayout
+                                android:layout_width="57dp"
+                                android:layout_height="30dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/btn_rounded_accent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/gotham"
+                                    android:gravity="center"
+                                    android:text="Aktif"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="@dimen/text_medium"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:cardElevation="10dp"
-            app:cardCornerRadius="10dp">
-            <LinearLayout
-                android:padding="10dp"
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_marginBottom="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tanggal Mulai"
-                    android:textSize="@dimen/header_text_small"
-                    android:fontFamily="@font/gotham"
-                    android:textColor="@color/colorBlack"/>
+                android:layout_margin="10dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="10dp">
                 <LinearLayout
+                    android:padding="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_primary_rounded">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Mulai"
+                        android:textSize="@dimen/header_text_small"
+                        android:fontFamily="@font/gotham"
+                        android:textColor="@color/colorBlack"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
-                        android:background="@drawable/button_white_rounded">
+                        android:background="@drawable/button_primary_rounded">
                         <LinearLayout
-                            android:id="@+id/linearTanggalMulai"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:textSize="20sp"
-                                android:id="@+id/tvTanggalMulai"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/button_white_rounded">
+                            <LinearLayout
+                                android:id="@+id/linearTanggalMulai"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/gotham"
-                                android:padding="5dp"
-                                android:text="21 April 2020"
-                                android:textColor="@color/colorBlack" />
+                                android:orientation="horizontal">
 
-                            <ImageView
-                                android:id="@+id/ivTanggalMulai"
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:layout_gravity="right"
-                                android:layout_weight="5"
-                                android:foregroundGravity="right"
-                                android:src="@drawable/calendar"/>
+                                <TextView
+                                    android:textSize="20sp"
+                                    android:id="@+id/tvTanggalMulai"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gotham"
+                                    android:padding="5dp"
+                                    android:text="21 April 2020"
+                                    android:textColor="@color/colorBlack" />
+
+                                <ImageView
+                                    android:id="@+id/ivTanggalMulai"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="right"
+                                    android:layout_weight="5"
+                                    android:foregroundGravity="right"
+                                    android:src="@drawable/calendar"/>
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-                <TextView
-                    android:layout_marginBottom="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tanggal Selesai"
-                    android:textSize="@dimen/header_text_small"
-                    android:fontFamily="@font/gotham"
-                    android:textColor="@color/colorBlack"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_primary_rounded">
+                    <TextView
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Selesai"
+                        android:textSize="@dimen/header_text_small"
+                        android:fontFamily="@font/gotham"
+                        android:textColor="@color/colorBlack"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
-                        android:background="@drawable/button_white_rounded">
+                        android:background="@drawable/button_primary_rounded">
                         <LinearLayout
-                            android:id="@+id/linearTanggalSelesai"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:textSize="20sp"
-                                android:id="@+id/tvTanggalSelesai"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/button_white_rounded">
+                            <LinearLayout
+                                android:id="@+id/linearTanggalSelesai"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/gotham"
-                                android:padding="5dp"
-                                android:text="21 April 2020"
-                                android:textColor="@color/colorBlack" />
+                                android:orientation="horizontal">
 
-                            <ImageView
-                                android:id="@+id/ivTanggalSelesai"
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:layout_gravity="right"
-                                android:layout_weight="5"
-                                android:foregroundGravity="right"
-                                android:src="@drawable/calendar"/>
+                                <TextView
+                                    android:textSize="20sp"
+                                    android:id="@+id/tvTanggalSelesai"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/gotham"
+                                    android:padding="5dp"
+                                    android:text="21 April 2020"
+                                    android:textColor="@color/colorBlack" />
+
+                                <ImageView
+                                    android:id="@+id/ivTanggalSelesai"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="right"
+                                    android:layout_weight="5"
+                                    android:foregroundGravity="right"
+                                    android:src="@drawable/calendar"/>
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-                <TextView
-                    android:layout_marginBottom="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Alasan Cuti"
-                    android:textSize="@dimen/header_text_small"
-                    android:fontFamily="@font/gotham"
-                    android:textColor="@color/colorBlack"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_primary_rounded">
+                    <TextView
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alasan Cuti"
+                        android:textSize="@dimen/header_text_small"
+                        android:fontFamily="@font/gotham"
+                        android:textColor="@color/colorBlack"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
-                        android:background="@drawable/button_white_rounded">
-                        <EditText
-                            android:id="@+id/etUsername"
-                            android:fontFamily="@font/gotham"
-                            android:textSize="20sp"
-                            android:background="@color/colorWhite"
+                        android:background="@drawable/button_primary_rounded">
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:hint="Username"/>
+                            android:layout_margin="3dp"
+                            android:background="@drawable/button_white_rounded">
+                            <EditText
+                                android:id="@+id/etUsername"
+                                android:fontFamily="@font/gotham"
+                                android:textSize="20sp"
+                                android:background="@color/colorWhite"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:hint="Username"/>
+                        </LinearLayout>
                     </LinearLayout>
-                </LinearLayout>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhite"
-                    android:fontFamily="@font/gotham"
-                    android:text="Kirim"
-                    android:background="@drawable/button_primary_rounded"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30sp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:fontFamily="@font/gotham"
+                        android:text="Kirim"
+                        android:background="@drawable/button_primary_rounded"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30sp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"/>
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
-</FrameLayout>
+
+</LinearLayout>
