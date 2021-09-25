@@ -118,14 +118,15 @@ public class MenuClaimActivity extends AppCompatActivity implements DatePickerDi
         tvBerkas = findViewById(R.id.tvBerkas);
         ivBerkas = findViewById(R.id.ivBerkas);
         Kirim = findViewById(R.id.btnKirim);
-        nama = findViewById(R.id.tvNama);
-        nik = findViewById(R.id.tvNik);
+
         LTanggalPengajuan = findViewById(R.id.linearTanggalPengajuan);
         LTanggalBerkas = findViewById(R.id.linearTanggalBerkas);
         TanggalPengajuan = findViewById(R.id.tvTanggalPengajuan);
         TanggalBerkas = findViewById(R.id.tvTanggalBerkas);
         JenisKlaim = findViewById(R.id.etJenisKlaim);
         TotalKlaim = findViewById(R.id.etTotalKlaim);
+        nama = findViewById(R.id.tvNama);
+        nik = findViewById(R.id.tvNik);
         dbHelper = new DB_Helper(this);
         Cursor cursor = dbHelper.checkUser();
         if (cursor.getCount()>0){

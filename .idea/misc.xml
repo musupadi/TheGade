@@ -17,17 +17,20 @@
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_check_in.xml" value="0.15" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_check_out.xml" value="0.1" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_daftar_kehadiran.xml" value="0.1" />
+        <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_dispensasi_kehadiran.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_maps.xml" value="0.1" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_menu_claim.xml" value="0.18" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_menu_cuti.xml" value="0.21" />
+        <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_pengajuan_cuti.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/activity_splash.xml" value="0.18" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/dialog_exit.xml" value="0.15" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/dialog_logout.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/fragment_karyawan.xml" value="0.18" />
         <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/fragment_pengaturan.xml" value="0.21" />
+        <entry key="..\:/Users/Zyarga/AndroidStudioProjects/TheGade/app/src/main/res/layout/list_dispensasi.xml" value="0.25" />
       </map>
     </option>
   </component>

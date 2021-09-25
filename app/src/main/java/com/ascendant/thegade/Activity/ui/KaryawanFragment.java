@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ascendant.thegade.Activity.ui.Karyawan.DispensasiKehadiranActivity;
 import com.ascendant.thegade.Activity.ui.Karyawan.MenuClaimActivity;
 import com.ascendant.thegade.Activity.ui.Karyawan.MenuCutiActivity;
 import com.ascendant.thegade.Method.Ascendant;
@@ -82,7 +83,8 @@ public class KaryawanFragment extends Fragment {
         Dispensasion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getActivity(), DispensasiKehadiranActivity.class);
+                startActivity(intent);
             }
         });
     }

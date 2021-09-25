@@ -53,6 +53,16 @@ public interface ApiRequest {
                                             @Part("nominal_reimburse") RequestBody nominal_reimburse,
                                             @Part MultipartBody.Part file_reimburse);
 
+    @Multipart
+    @POST("dispensasi/request")
+    Call<ResponseObject> DispensasionPengajuan(@Header("Authorization") String authHeader,
+                                            @Part("id_karyawan") RequestBody id_karyawan,
+                                            @Part("jenis_dispensasi") RequestBody jenis_klaim,
+                                            @Part("tgl_mulai") RequestBody tgl_pengajuan,
+                                            @Part("tgl_selesai") RequestBody tgl_berkas,
+                                            @Part("keterangan_dispensasi") RequestBody nominal_reimburse,
+                                            @Part MultipartBody.Part file_reimburse);
+
     @POST("location")
     Call<ResponseObject> location(@Header("Authorization") String authHeader);
 }
