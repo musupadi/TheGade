@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     Button No,Yes;
     boolean doubleBackToExitPressedOnce = false;
 
-
+//    supri kontol
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
