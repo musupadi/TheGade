@@ -170,6 +170,7 @@
                 android:layout_height="150dp"
                 android:orientation="horizontal">
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardDaftarPekerjaan"
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -233,6 +234,7 @@
                 android:layout_height="150dp"
                 android:orientation="horizontal">
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardAbsen"
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

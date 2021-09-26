@@ -7,6 +7,42 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Ascendant {
+    public String MagicDateChange(String dates){
+        String result = "";
+        String year = dates.substring(0,4);
+        String month = dates.substring(5,7);
+        String day = dates.substring(8,10);
+
+        String MONTH = "Januari";
+        if (month.equals("01") || month.equals("1")){
+            MONTH = "Januari";
+        }else if (month.equals("02") || month.equals("2")){
+            MONTH = "Februari";
+        }else if (month.equals("03") || month.equals("3")){
+            MONTH = "Maret";
+        }else if (month.equals("04") || month.equals("4")){
+            MONTH = "April";
+        }else if (month.equals("05") || month.equals("5")){
+            MONTH = "Mei";
+        }else if (month.equals("06") || month.equals("6")){
+            MONTH = "Juni";
+        }else if (month.equals("07") || month.equals("7")){
+            MONTH = "Juli";
+        }else if (month.equals("08") || month.equals("8")){
+            MONTH = "Agustus";
+        }else if (month.equals("09") || month.equals("9")){
+            MONTH = "September";
+        }else if (month.equals("10")){
+            MONTH = "Oktober";
+        }else if (month.equals("11")){
+            MONTH = "November";
+        }else if (month.equals("12")){
+            MONTH = "Desember";
+        }
+        result = day+" "+MONTH+" "+year;
+        return result;
+
+    }
     public String AUTH(){
         String username = "gade-api";
         String password = "963852741";

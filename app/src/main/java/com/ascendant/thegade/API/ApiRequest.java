@@ -1,5 +1,6 @@
 package com.ascendant.thegade.API;
 
+import com.ascendant.thegade.Model.Response.ResponseArrayObject;
 import com.ascendant.thegade.Model.Response.ResponseObject;
 
 import okhttp3.MultipartBody;
@@ -20,6 +21,21 @@ public interface ApiRequest {
                                @Field("password") String password);
 
     @FormUrlEncoded
+    @POST("pekerjaan")
+    Call<ResponseArrayObject> DaftarPekerjaan(@Header("Authorization") String authHeader,
+                                              @Field("id_karyawan") String id_karyawan);
+
+    @FormUrlEncoded
+    @POST("absen/daftar")
+    Call<ResponseArrayObject> DaftarAbsen(@Header("Authorization") String authHeader,
+                                              @Field("id_karyawan") String id_karyawan);
+
+    @FormUrlEncoded
+    @POST("user/profil")
+    Call<ResponseObject> ProfileUser(@Header("Authorization") String authHeader,
+                                              @Field("id_karyawan") String id_karyawan);
+
+    @FormUrlEncoded
     @POST("absen/masuk")
     Call<ResponseObject> CheckIn(@Header("Authorization") String authHeader,
                                  @Field("id_karyawan") String id_karyawan,
@@ -38,10 +54,18 @@ public interface ApiRequest {
     @FormUrlEncoded
     @POST("absen/keluar")
     Call<ResponseObject> CheckOut(@Header("Authorization") String authHeader,
-                                 @Field("id_karyawan") String id_karyawan,
-                                 @Field("waktu_absen") String waktu_absen,
-                                 @Field("latitude") String latitude,
-                                 @Field("longitude") String longitude);
+                                  @Field("id_karyawan") String id_karyawan,
+                                  @Field("waktu_absen") String waktu_absen,
+                                  @Field("latitude") String latitude,
+                                  @Field("longitude") String longitude);
+
+    @FormUrlEncoded
+    @POST("user/change_pass")
+    Call<ResponseObject> ChangePassword(@Header("Authorization") String authHeader,
+                                        @Field("id_karyawan") String id_karyawan,
+                                        @Field("pass_lama") String pass_lama,
+                                        @Field("pass_baru") String pass_baru,
+                                        @Field("pass_conf") String pass_conf);
 
     @Multipart
     @POST("reimburse/pengajuan")
@@ -65,4 +89,5 @@ public interface ApiRequest {
 
     @POST("location")
     Call<ResponseObject> location(@Header("Authorization") String authHeader);
+
 }

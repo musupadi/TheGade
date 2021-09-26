@@ -13,6 +13,14 @@ public class ResponseArrayObject {
     @Nullable
     public String status;
 
+    @SerializedName("code")
+    @Nullable
+    public Integer code;
+
+    @SerializedName("message")
+    @Nullable
+    public String message;
+
     @SerializedName("data")
     @Nullable
     List<DataModel> data;
@@ -33,5 +41,23 @@ public class ResponseArrayObject {
 
     public void setData(@Nullable List<DataModel> data) {
         this.data = data;
+    }
+
+    @Nullable
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(@Nullable Integer code) {
+        this.code = code;
+    }
+
+    @Nullable
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(@Nullable String message) {
+        this.message = message;
     }
 }
