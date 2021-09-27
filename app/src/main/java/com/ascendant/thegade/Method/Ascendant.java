@@ -1,12 +1,35 @@
 package com.ascendant.thegade.Method;
 
+import android.app.DownloadManager;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Environment;
 import android.util.Base64;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DateFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Ascendant {
+    public String BaseURL(){
+        String URL = "https://gade-app.fabakonsultan.com/";
+        return URL;
+    }
+    public void DownloadPDF(String url, String judul, Context ctx){
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
+        request.setTitle(judul);
+        request.setDescription("Downloading "+judul);
+        request.allowScanningByMediaScanner();
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"/The Gade/"+judul+".pdf");
+        DownloadManager manager = (DownloadManager)ctx.getSystemService(Context.DOWNLOAD_SERVICE);
+        manager.enqueue(request);
+    }
     public String MagicDateChange(String dates){
         String result = "";
         String year = dates.substring(0,4);
@@ -42,6 +65,18 @@ public class Ascendant {
         result = day+" "+MONTH+" "+year;
         return result;
 
+    }
+    public String MagicRP(double nilai){
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        BigDecimal bd1 = new BigDecimal(nilai).setScale(0, RoundingMode.HALF_UP);
+        return MagicalRPStage2(formatRupiah.format(bd1));
+    }
+
+    public String MagicalRPStage2(String magic){
+        String MAGIC1 = magic.replace("Rp","Rp ");
+        String MAGIC2 = MAGIC1.replace(",",".");
+        return MAGIC2.replace(".",".");
     }
     public String AUTH(){
         String username = "gade-api";

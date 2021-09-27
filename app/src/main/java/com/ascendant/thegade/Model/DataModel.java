@@ -138,6 +138,35 @@ public class DataModel {
     @Expose
     public String status_absen;
 
+    //Gaji
+    @SerializedName("id_gaji")
+    @Expose
+    public String id_gaji;
+
+    @SerializedName("nama_gaji")
+    @Expose
+    public String nama_gaji;
+
+    @SerializedName("gaji_seharusnya")
+    @Expose
+    public String gaji_seharusnya;
+
+    @SerializedName("gaji_diterima")
+    @Expose
+    public String gaji_diterima;
+
+    @SerializedName("waktu_gajian")
+    @Expose
+    public String waktu_gajian;
+
+    @SerializedName("waktu_gajian_diterima")
+    @Expose
+    public String waktu_gajian_diterima;
+
+    @SerializedName("tgl_input")
+    @Expose
+    public String tgl_input;
+
 
 
 
@@ -396,5 +425,61 @@ public class DataModel {
 
     public void setStatus_absen(String status_absen) {
         this.status_absen = status_absen;
+    }
+
+    public String getId_gaji() {
+        return id_gaji;
+    }
+
+    public void setId_gaji(String id_gaji) {
+        this.id_gaji = id_gaji;
+    }
+
+    public String getNama_gaji() {
+        return nama_gaji;
+    }
+
+    public void setNama_gaji(String nama_gaji) {
+        this.nama_gaji = nama_gaji;
+    }
+
+    public String getGaji_seharusnya() {
+        return gaji_seharusnya;
+    }
+
+    public void setGaji_seharusnya(String gaji_seharusnya) {
+        this.gaji_seharusnya = gaji_seharusnya;
+    }
+
+    public String getGaji_diterima() {
+        return gaji_diterima;
+    }
+
+    public void setGaji_diterima(String gaji_diterima) {
+        this.gaji_diterima = gaji_diterima;
+    }
+
+    public String getWaktu_gajian() {
+        return waktu_gajian;
+    }
+
+    public void setWaktu_gajian(String waktu_gajian) {
+        this.waktu_gajian = waktu_gajian;
+    }
+
+    public String getWaktu_gajian_diterima() {
+        return waktu_gajian_diterima;
+    }
+
+    public void setWaktu_gajian_diterima(String waktu_gajian_diterima) {
+        this.waktu_gajian_diterima = waktu_gajian_diterima;
+    }
+
+    public String getTgl_input() {
+        return tgl_input;
+    }
+
+    public void setTgl_input(String tgl_input) {
+        this.tgl_input = tgl_input;
     }
 }

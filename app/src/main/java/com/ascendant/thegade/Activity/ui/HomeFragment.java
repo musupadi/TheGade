@@ -19,6 +19,8 @@ import com.ascendant.thegade.Activity.ui.Home.CheckInActivity;
 import com.ascendant.thegade.Activity.ui.Home.CheckOutActivity;
 import com.ascendant.thegade.Activity.ui.Home.DaftarKehadiranActivity;
 import com.ascendant.thegade.Activity.ui.Home.DaftarPekerjaanActivity;
+import com.ascendant.thegade.Activity.ui.Home.DataKaryawanActivity;
+import com.ascendant.thegade.Activity.ui.Home.SlipGajiActivity;
 import com.ascendant.thegade.R;
 import com.ascendant.thegade.SharedPreferance.DB_Helper;
 
@@ -29,7 +31,7 @@ public class HomeFragment extends Fragment {
     String Id,Username,Nama,Status,Nik;
     TextView nama,nik;
     CardView CheckIn,CheckOut;
-    CardView DaftarPekerjaan,Absen;
+    CardView DaftarPekerjaan,Absen,SlipGaji,DataKaryawan;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -56,6 +58,8 @@ public class HomeFragment extends Fragment {
         CheckIn = view.findViewById(R.id.cardCheckIn);
         CheckOut = view.findViewById(R.id.cardCheckOut);
         DaftarPekerjaan = view.findViewById(R.id.cardDaftarPekerjaan);
+        SlipGaji = view.findViewById(R.id.cardSlipGaji);
+        DataKaryawan = view.findViewById(R.id.cardDataKaryawan);
         Absen = view.findViewById(R.id.cardAbsen);
 
 
@@ -98,6 +102,20 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), DaftarKehadiranActivity.class);
+                startActivity(intent);
+            }
+        });
+        SlipGaji.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SlipGajiActivity.class);
+                startActivity(intent);
+            }
+        });
+        DataKaryawan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DataKaryawanActivity.class);
                 startActivity(intent);
             }
         });

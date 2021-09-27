@@ -200,6 +200,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardSlipGaji"
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -265,6 +266,7 @@
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:layout_margin="10dp"
+                    android:id="@+id/cardDataKaryawan"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
