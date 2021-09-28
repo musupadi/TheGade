@@ -80,7 +80,6 @@ public class PengaturanFragment extends Fragment {
         nik = view.findViewById(R.id.tvNik);
         Profil = view.findViewById(R.id.linearProfilKaryawan);
         GantiPassword = view.findViewById(R.id.linearGantiPassword);
-        FAQ = view.findViewById(R.id.linearFaq);
         Logout = view.findViewById(R.id.linearLogout);
         AscNet = new Ascendant();
         dbHelper = new DB_Helper(getActivity());
@@ -240,12 +239,6 @@ public class PengaturanFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 dialogPassword.show();
-            }
-        });
-        FAQ.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
             }
         });
         Logout.setOnClickListener(new View.OnClickListener() {

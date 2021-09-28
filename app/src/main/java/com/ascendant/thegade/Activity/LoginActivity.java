@@ -92,8 +92,8 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(intent);
                         finishAffinity();
                     }else{
-                        Toast.makeText(LoginActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-//                        Toast.makeText(LoginActivity.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(LoginActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
                     }
                 }catch (Exception e){
                     Log.d("Ascendant Error Log : ",e.toString());

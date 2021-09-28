@@ -196,6 +196,8 @@ public class MenuClaimActivity extends AppCompatActivity implements DatePickerDi
             Toast.makeText(MenuClaimActivity.this, "Harap Jenis Klaim Diisi", Toast.LENGTH_SHORT).show();
         }else if(TotalKlaim.getText().toString().isEmpty()){
             Toast.makeText(MenuClaimActivity.this, "Harap Total Klaim Diisi", Toast.LENGTH_SHORT).show();
+        }else if(Gambar1=false){
+            Toast.makeText(MenuClaimActivity.this, "Berkasi harus Diisi", Toast.LENGTH_SHORT).show();
         }else{
             Logic();
         }
@@ -233,7 +235,7 @@ public class MenuClaimActivity extends AppCompatActivity implements DatePickerDi
             @Override
             public void onFailure(Call<ResponseObject> call, Throwable t) {
                 pd.hide();
-                Toast.makeText(MenuClaimActivity.this, "Koneksi Gagal", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MenuClaimActivity.this, "Berkasi harus Diisi", Toast.LENGTH_SHORT).show();
             }
         });
     }

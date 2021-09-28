@@ -170,6 +170,8 @@ public class DispensasiKehadiranActivity extends AppCompatActivity implements Da
             Toast.makeText(DispensasiKehadiranActivity.this, "Harap Jenis Dispensasi Diisi", Toast.LENGTH_SHORT).show();
         }else if(Keterangan.getText().toString().isEmpty()){
             Toast.makeText(DispensasiKehadiranActivity.this, "Harap Keterangan Diisi", Toast.LENGTH_SHORT).show();
+        }else if(Gambar1=false){
+            Toast.makeText(DispensasiKehadiranActivity.this, "Berkasi harus Diisi", Toast.LENGTH_SHORT).show();
         }else{
             Logic();
         }
@@ -207,7 +209,7 @@ public class DispensasiKehadiranActivity extends AppCompatActivity implements Da
             @Override
             public void onFailure(Call<ResponseObject> call, Throwable t) {
                 pd.hide();
-                Toast.makeText(DispensasiKehadiranActivity.this, "Koneksi Gagal", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DispensasiKehadiranActivity.this, "Berkasi harus Diisi", Toast.LENGTH_SHORT).show();
             }
         });
     }
